@@ -19,17 +19,18 @@ sap.ui.define(
         if (!this.pDialog) {
           this.pDialog = this.loadFragment({
             name: "sap.ui.demo.walkthrough.view.HelloDialog",
-          }).then(
-            function (oDialog) {
-              // forward compact/cozy style into dialog
-              syncStyleClass(
-                this.getOwnerComponent().getContentDensityClass(),
-                this.getView(),
-                oDialog
-              )
-              return oDialog
-            }.bind(this)
-          )
+          })
+          // .then(
+          //   function (oDialog) {
+          //     // forward compact/cozy style into dialog
+          //     syncStyleClass(
+          //       this.getOwnerComponent().getContentDensityClass(),
+          //       this.getView(),
+          //       oDialog
+          //     )
+          //     return oDialog
+          //   }.bind(this)
+          // )
         }
         this.pDialog.then(function (oDialog) {
           oDialog.open()

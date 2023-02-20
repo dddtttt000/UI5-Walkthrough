@@ -1,0 +1,32 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.PdfPanel"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+>
+<Panel 
+  class="sapUiResponsiveMargin" 
+  headerText="{i18n>pdfPanelTitle}"  
+  width="auto">
+  <content>
+    <Button  id="pdfViewButton"
+    icon="sap-icon://pdf-attachment"
+    text="{i18n>pdfViewButtonText}" 
+    class="myCustomButton"
+    press=".onShowPDF"
+    />
+
+    <!-- press=".onShowViewImg" -->
+    <FlexBox direction="Column" renderType="Div" class="sapUiSmallMargin">
+			<FlexBox>
+				<!-- <Button text="Correctly Displayed" press="onCorrectPathClick"/> -->
+				<!-- <Button text="Loading Error" press="onIncorrectPathClick"/> -->
+			</FlexBox>
+			<PDFViewer source="{/Source}" title="{/Title}" height="{/Height}">
+				<layoutData>
+					<FlexItemData growFactor="1" />
+				</layoutData>
+			</PDFViewer>
+		</FlexBox>
+  </content>
+  </Panel>
+</mvc:View>
