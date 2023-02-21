@@ -1,0 +1,34 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.PDFView"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+  <Page title="PDF View" showNavButton="true"
+		navButtonPress=".onNavBack">
+    <FlexBox direction="Column" renderType="Div" class="sapUiSmallMargin">
+			<FlexBox>
+        <Button  id="pdfViewButton"
+          icon="sap-icon://pdf-attachment"
+          text="{i18n>pdfViewButtonText}" 
+          class="myCustomButton"
+          press=".onShowPDF"
+        />
+				<!-- <Button text="Correctly Displayed" press="onCorrectPathClick"/> -->
+				<!-- <Button text="Loading Error" press="onIncorrectPathClick"/> -->
+			</FlexBox>
+			<PDFViewer source="{/Source}" title="{/Title}" height="{/Height}">
+				<layoutData>
+					<FlexItemData growFactor="1" />
+				</layoutData>
+			</PDFViewer>
+		</FlexBox>
+
+      <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.SignPad"/>
+
+
+  </Page>
+</mvc:View>

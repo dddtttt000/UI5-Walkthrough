@@ -1,0 +1,28 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.SignPad"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+	<Page title="Digital Signature Pad">
+		<content>
+			<VBox>
+				<c:HTML id="html">
+				</c:HTML>
+			</VBox>
+			<VBox>
+				<HBox>
+          <Button id="Signature" text="Create Signature" press="onSign"> </Button>
+					<Button id="Save" text="Save" press="saveButton"></Button>
+					<Button id="clear" text="Clear" press="clearButton"></Button>
+				</HBox>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>
+
+
+

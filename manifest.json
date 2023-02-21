@@ -76,6 +76,11 @@
           "pattern": "detail/{invoicePath}",
           "name": "detail",
           "target": "detail"
+        },
+        {
+          "pattern": "DFView",
+          "name": "PDFView",
+          "target": "PDFView"
         }
       ],
       "targets": {
@@ -86,6 +91,10 @@
         "detail": {
           "id": "detail",
           "name": "Detail"
+        },
+        "PDFView": {
+          "id": "PDFView",
+          "name": "PDFView"
         }
       }
     },
