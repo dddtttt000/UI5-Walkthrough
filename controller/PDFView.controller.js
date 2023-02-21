@@ -3,19 +3,20 @@ sap.ui.define(
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/routing/History",
+    "libs/assets/pspdfkit",
   ],
   function (Controller, JSONModel, History) {
     "use strict"
 
     return Controller.extend("sap.ui.demo.walkthrough.controller.PDFView", {
-      onInit: function () {
-        this.getView().setModel(
-          new JSONModel({
-            // pdfsource: ""
-            pdfSource: "static/OpenUI5.pdf",
-          })
-        )
-      },
+      // onInit: function () {
+      //   this.getView().setModel(
+      //     new JSONModel({
+      //       // pdfsource: ""
+      //       pdfSource: "static/OpenUI5.pdf",
+      //     })
+      //   )
+      // },
       onFileChange: function (oEvent) {
         var reader = new FileReader(),
           me = this
@@ -47,6 +48,17 @@ sap.ui.define(
           Height: "600px",
         })
         this.getView().setModel(this._oModel)
+
+        PSPDFKit.load({
+          container: "#container-walkthrough---PDFView--pspdfkit",
+          document: "document.pdf",
+        })
+          .then(function (instance) {
+            console.log("PSPDFKit loaded", instance)
+          })
+          .catch(function (error) {
+            console.error(error.message)
+          })
       },
 
       onCorrectPathClick: function () {

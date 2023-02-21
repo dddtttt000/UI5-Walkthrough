@@ -104,6 +104,9 @@
           "uri": "css/style.css"
         }
       ]
+    },
+    "resourceRoots": {
+      "libs.assets": "libs/assets/"
     }
   }
 }
